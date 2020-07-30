@@ -19,7 +19,10 @@ public class Test01 {
             System.out.println();
         }
     }
+    @Test
+    public void find(){
 
+    }
     @Test
     public  void test02(){
         int [] arr={123,213,213,421,1,2,3523,23};
