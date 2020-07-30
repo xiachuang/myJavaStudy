@@ -1,0 +1,67 @@
+{
+  "groups": [
+    {
+      "name": "person",
+      "type": "com.hdj.spring_boot_day02.domain.Person",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "user",
+      "type": "com.hdj.spring_boot_day02.domain.User",
+      "sourceType": "com.hdj.spring_boot_day02.domain.User"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.birth",
+      "type": "java.util.Date",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.boss",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.car",
+      "type": "com.hdj.spring_boot_day02.domain.Car",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.lists",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.maps",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "person.person-name",
+      "type": "java.lang.String",
+      "sourceType": "com.hdj.spring_boot_day02.domain.Person"
+    },
+    {
+      "name": "user.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.hdj.spring_boot_day02.domain.User"
+    },
+    {
+      "name": "user.cars",
+      "type": "java.util.List<com.hdj.spring_boot_day02.domain.Car>",
+      "sourceType": "com.hdj.spring_boot_day02.domain.User"
+    },
+    {
+      "name": "user.user-name",
+      "type": "java.lang.String",
+      "sourceType": "com.hdj.spring_boot_day02.domain.User"
+    }
+  ],
+  "hints": []
+}

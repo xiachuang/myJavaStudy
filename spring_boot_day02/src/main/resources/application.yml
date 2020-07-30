@@ -1,0 +1,16 @@
+person:
+  person-name: 夏创${random.uuid}
+  age: ${random.int}
+  boss: false
+  birth: 2012/12/12
+  maps: {key1: xia,key2: yu}
+  lists:
+    - list
+    - 肖响
+  car:
+    id: 1
+    carName: ${person-name}_宝马
+
+
+
+

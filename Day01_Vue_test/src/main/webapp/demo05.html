@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间修饰符</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="aoc">
+        <form @submit.prevent action="demo02.html">
+            <input type="submit" value="提交">
+        </form>
+        <div @cilick="fun1">
+            <a @cilic.stop href="demo01.html"></a>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:'#aoc',
+            methods:{
+                fun1:function () {
+                    alert("hello");
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

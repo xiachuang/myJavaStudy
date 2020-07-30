@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue01</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+
+    </div>
+    <div id="app1">
+        {{message}}<!--Vue的插值表达式，把data中定义的数据显示到此处-->
+
+        <!-- 三元运算符 -->
+        {{ false ? "OK" : "No" }}
+
+        <!-- 数学运算-->
+        {{number*3.14}}
+
+    </div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:10
+
+        }
+    });
+</script>
+<script>
+    new Vue({
+        el:'#app1',
+        data:{
+            message:"Hello Vue!  EESY",//注意：此处不要加分号
+            number:100
+        }
+    });
+</script>
+</body>
+</html>

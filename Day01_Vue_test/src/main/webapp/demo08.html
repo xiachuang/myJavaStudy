@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="aoi">
+        名字：<input type="text" id="username" v-model="user.username"><br>
+        密码：<input type="text" id="password" v-model="user.password"><br>
+            <input type="button" v-on:click="fun1" click="fun1" value="获取">
+    </div>
+    <script>
+        new Vue({
+            el:'#aoi',
+            data:{
+                user:{username:"",password:""}
+            },
+            methods:{
+                fun1:function () {
+                    alert(this.user.username+"  "+this.user.password);
+                    this.user.username="xiachuang";
+                    this.user.password="12342";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
