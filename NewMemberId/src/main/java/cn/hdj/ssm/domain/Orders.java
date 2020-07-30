@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Orders implements Serializable {
-    private String id;
+    private Integer id;
     private String orderNum;
     private Date orderTime;
     private String orderTimeStr;
@@ -35,11 +35,30 @@ public class Orders implements Serializable {
         this.orderStatusStr = orderStatusStr;
     }
 
-    public String getId() {
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", orderNum='" + orderNum + '\'' +
+                ", orderTime=" + orderTime +
+                ", orderTimeStr='" + orderTimeStr + '\'' +
+                ", orderStatus=" + orderStatus +
+                ", orderStatusStr='" + orderStatusStr + '\'' +
+                ", peopleCount=" + peopleCount +
+                ", product=" + product +
+                ", travellers=" + travellers +
+                ", member=" + member +
+                ", payType=" + payType +
+                ", payTypeStr='" + payTypeStr + '\'' +
+                ", orderDesc='" + orderDesc + '\'' +
+                '}';
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

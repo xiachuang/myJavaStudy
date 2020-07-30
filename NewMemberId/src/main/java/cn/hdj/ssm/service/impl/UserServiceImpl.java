@@ -7,5 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
 @Transactional
-public class UserServiceImpl implements IUserService, UserDetailsService {
+public class UserServiceImpl implements IUserService {
+
 }

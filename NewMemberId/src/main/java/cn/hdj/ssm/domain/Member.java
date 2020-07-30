@@ -3,17 +3,28 @@ package cn.hdj.ssm.domain;
 import java.io.Serializable;
 
 public class Member implements Serializable {
-    private String id;
+    private Integer id;
     private String name;
     private String nickname;
     private String phoneNum;
     private String email;
 
-    public String getId() {
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -3,6 +3,7 @@ package cn.hdj.ssm.dao;
 import cn.hdj.ssm.domain.Product;
 import org.apache.ibatis.annotations.*;
 
+
 import java.util.List;
 
 public interface IProductDao {
@@ -18,4 +19,7 @@ public interface IProductDao {
     int delectById(Integer id);
     @Update("update product set productName=#{productName} where id=#{id}")
     int updateNameById(@Param("productName") String name,@Param("id") Integer id);
+    //模糊查询
+    @Select("select * from product where productName like CONCAT('%',#{productName},'%')")
+    public List<Product> findProductByNameLike(String name);
 }

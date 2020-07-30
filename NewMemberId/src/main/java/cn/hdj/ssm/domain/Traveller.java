@@ -3,7 +3,7 @@ package cn.hdj.ssm.domain;
 import java.io.Serializable;
 
 public class Traveller implements Serializable {
-    private String id;
+    private Integer id;
     private String name;
     private String sex;
     private String phoneNum;
@@ -13,11 +13,26 @@ public class Traveller implements Serializable {
     private Integer travellerType;
     private String travellerTypeStr;
 
-    public String getId() {
+    @Override
+    public String toString() {
+        return "Traveller{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", credentialsType=" + credentialsType +
+                ", credentialsTypeStr='" + credentialsTypeStr + '\'' +
+                ", credentialsNum='" + credentialsNum + '\'' +
+                ", travellerType=" + travellerType +
+                ", travellerTypeStr='" + travellerTypeStr + '\'' +
+                '}';
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
