@@ -4,6 +4,7 @@
     <list default="true" id="1cff11e3-d75b-442a-b0f4-a46a941e9308" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_boot_day02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot_day02.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +182,7 @@
       <workItem from="1596076385263" duration="764000" />
       <workItem from="1596077350186" duration="5096000" />
       <workItem from="1596204758745" duration="4949000" />
-      <workItem from="1596210802374" duration="1894000" />
+      <workItem from="1596210802374" duration="1917000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1596212831870</created>
