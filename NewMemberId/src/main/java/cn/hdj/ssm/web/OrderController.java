@@ -44,4 +44,13 @@ public class OrderController {
     PageInfo pageInfo=new PageInfo(ordersList);//pageInfo  不可以转成 Json数据
     return  pageInfo;
     }
+    @RequestMapping("/findOrdersByid")
+    public  ModelAndView findOrdersByid(@RequestParam(name = "id",required = true) Integer ordersId){
+       Orders orders= ids.findOrdersById(ordersId);
+       ModelAndView mv=new ModelAndView();
+       mv.addObject("orders",orders);
+       mv.setViewName("orders-show");
+       return mv;
+    }
+
 }

@@ -50,5 +50,16 @@ public class productController {
        mv.setViewName("product-list1");
        return mv;
     }
+    @RequestMapping("/save.do")
+    public String save(Product product){
+//        ModelAndView mv=new ModelAndView();
+        ips.saveProduct(product);
+        return  "redirect:findByAll.do";
+    }
+    @RequestMapping("/delete")
+    public String delect(Integer id){
+        ips.delectProductByid(id);
+        return "redirect:findByAll.do";
+    }
 
 }

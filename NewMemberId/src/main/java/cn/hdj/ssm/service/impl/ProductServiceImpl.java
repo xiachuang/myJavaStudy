@@ -27,6 +27,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public List<Product> findProductByAll() {
         List<Product> listp=ipd.findProductByAll();
+        System.out.println("夏创 ——————Success");
         return listp;
     }
 
