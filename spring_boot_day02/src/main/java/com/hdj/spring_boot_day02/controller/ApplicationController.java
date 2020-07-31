@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApplicationController {
     @Value("${person.person-name}")
     private  String name;
-    //@Autowired
+    @Autowired
     private Person person;
-    @RequestMapping("/hello")
+    @RequestMapping("/hello1")
     public String    hello(){
         return name;
     }

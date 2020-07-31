@@ -1,16 +1,30 @@
-person:
-  person-name: 夏创${random.uuid}
-  age: ${random.int}
-  boss: false
-  birth: 2012/12/12
-  maps: {key1: xia,key2: yu}
-  lists:
-    - list
-    - 肖响
-  car:
-    id: 1
-    carName: ${person-name}_宝马
+#person:
+#  person-name: 夏创${random.uuid}
+#  age: ${random.int}
+#  boss: false
+#  birth: 2012/12/12
+#  maps: {key1: xia,key2: yu}
+#  lists:
+#    - list
+#    - 肖响
+#  car:
+#    id: 1
+#    carName: ${person-name}_宝马
 
-
-
-
+#server:
+#  port: 8081
+#spring:
+#  profiles:
+#    active: dev
+#---
+#server:
+#  port: 8083
+#spring:
+#  profiles: dev
+#---
+#server:
+#  port: 8084
+#
+#
+#spring:
+#  profiles: prod

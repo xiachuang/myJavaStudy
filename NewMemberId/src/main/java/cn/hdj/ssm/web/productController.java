@@ -46,7 +46,7 @@ public class productController {
     public ModelAndView findByAll(){
         ModelAndView mv=new ModelAndView();
        List<Product> productList= ips.findProductByAll();
-       mv.addObject("productlists",productList);
+       mv.addObject("productList",productList);
        mv.setViewName("product-list1");
        return mv;
     }
