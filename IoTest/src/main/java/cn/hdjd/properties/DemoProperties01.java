@@ -31,7 +31,7 @@ public class DemoProperties01 {
         prop.setProperty("飞鱼","武汉大学");
         prop.setProperty("钱心意","华中科技");
         FileWriter fw=new FileWriter("src/file/prop.txt");
-        prop.store(fw,"s data");//字符流  可以写中文  字节流  不可以
+        prop.store(fw,"data");//字符流  可以写中文  字节流  不可以
         fw.close();
     }
     //load  方法
@@ -40,7 +40,7 @@ public class DemoProperties01 {
         prop.load(new FileReader("src/file/prop.txt"));//字节流  不能读取  又中文的数据
         for (String s : prop.stringPropertyNames()) {
              String value=prop.getProperty(s);
-            System.out.println(s+"==value");
+            System.out.println(s+"=="+value);
         }
 
     }

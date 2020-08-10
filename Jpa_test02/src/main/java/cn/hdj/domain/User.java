@@ -1,6 +1,9 @@
 package cn.hdj.domain;
 
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,6 +21,7 @@ public class User implements Serializable {
    @ManyToMany(targetEntity = Role.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
    @JoinTable(name = "sys_user_role",joinColumns = {@JoinColumn(name = "sys_user_id",referencedColumnName = "user_id")},
    inverseJoinColumns = {@JoinColumn(name="sys_role_id",referencedColumnName = "role_id")})
+   @NotFound(action= NotFoundAction.IGNORE)
     private Set<Role> roles=new HashSet<Role>();
     public Integer getUserId() {
         return userId;

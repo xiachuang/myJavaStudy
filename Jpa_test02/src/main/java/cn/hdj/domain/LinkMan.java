@@ -2,6 +2,9 @@ package cn.hdj.domain;
 
 
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 @Entity
@@ -33,6 +36,7 @@ public class LinkMan implements Serializable {
      */
     @ManyToOne(targetEntity = Customer.class,fetch = FetchType.LAZY)
     @JoinColumn(name = "lkm_cst_id",referencedColumnName = "cust_id")
+    @NotFound(action= NotFoundAction.IGNORE)
     private  Customer customer;
 
     public Integer getLkmId() {

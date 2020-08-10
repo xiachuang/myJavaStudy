@@ -17,5 +17,19 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.1</version>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; 源码的编译器版本 &ndash;&gt;-->
+<!--                    <source>1.8</source>-->
+<!--                    &lt;!&ndash; class的编译器版本 &ndash;&gt;-->
+<!--                    <target>1.8</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
 </project>

@@ -117,6 +117,7 @@ public class SpecTest {
      */
     @Test
     public void testSpec3(){
+        //分页
         Specification<Customer> spec=null;
         PageRequest page=new PageRequest(0,2);
         Page<Customer> pages=cd.findAll(null,page);

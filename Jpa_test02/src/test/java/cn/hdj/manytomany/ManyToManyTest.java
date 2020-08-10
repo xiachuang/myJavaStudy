@@ -131,4 +131,21 @@ public class ManyToManyTest {
        }
         System.out.println("success");
     }
+
+    @Test
+    @Transactional
+    @Rollback(false)
+    public  void deleteByRole(){
+        User user=ud.findOne(2);
+        Role role=rd.findOne(1);
+        user.getRoles().remove(role);
+        role.getUsers().remove(user);
+        ud.save(user);
+        User user1=ud.findOne(2);
+        Set<Role> roles=user1.getRoles();
+        for(Role r:roles){
+            System.out.println(r);
+        }
+    }
+
 }

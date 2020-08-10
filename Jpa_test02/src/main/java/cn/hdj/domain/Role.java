@@ -1,5 +1,8 @@
 package cn.hdj.domain;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -17,6 +20,7 @@ public class Role implements Serializable {
     @Column(name = "role_level")
     private String roleLevel;
     @ManyToMany(mappedBy = "roles",cascade = CascadeType.ALL)
+    @NotFound(action= NotFoundAction.IGNORE)
     private Set<User> users=new HashSet<>();
     public Integer getRoleId() {
         return roleId;

@@ -3,8 +3,6 @@ import  org.junit.Test;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
 
 public class TestDay02 {
     @Test
@@ -21,5 +19,10 @@ public class TestDay02 {
     public void testread() throws Exception {
         FileInputStream fis=new FileInputStream("src/file/a.txt");
         BufferedInputStream bif=new BufferedInputStream(fis);
+        byte[] bytes=new byte[1024];
+        int len=0;
+        while((len=bif.read(bytes))!=-1){
+            System.out.println(new String(bytes,0,len));
+        }
     }
 }

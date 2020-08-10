@@ -1,12 +1,17 @@
 package cn.hdj.domain;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-
+//
+//@Entity
+//@Table(name="customer")
 @Entity
-@Table(name="cst_customer")
+@Table
 public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +45,7 @@ public class Customer implements Serializable {
      延迟加载的意思就是，查询主体的时候，关联属性先不查询（想法里观察SQL语句就可以确定），直到其第一次被访问
      */
     @OneToMany(mappedBy ="customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @NotFound(action= NotFoundAction.IGNORE)
     private Set<LinkMan> linkMans=new HashSet<>();
 
     public Integer getCustId() {

@@ -24,6 +24,8 @@ public class OrdersServiceImpl implements IOrdersService {
 
     @Override
     public Orders findOrdersById(Integer id) {
-        return null;
+       Orders orders= ido.findOrdersById(id);
+
+        return orders;
     }
 }
