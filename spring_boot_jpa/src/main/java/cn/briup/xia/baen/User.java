@@ -1,5 +1,6 @@
 package cn.briup.xia.baen;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -24,7 +25,7 @@ public class User implements Serializable {
     private String userPhone;
     @Column(name = "user_email")
     private String userEmail;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<Customer> customers=new HashSet<>();
     @ManyToMany(targetEntity = Role.class,fetch = FetchType.LAZY)
@@ -88,11 +89,11 @@ public class User implements Serializable {
     public void setCustomers(Set<Customer> customers) {
         this.customers = customers;
     }
-
+    @JsonBackReference
     public Set<Role> getRoles() {
         return roles;
     }
-
+    @JsonBackReference
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
@@ -106,8 +107,6 @@ public class User implements Serializable {
                 ", userAge=" + userAge +
                 ", userPhone='" + userPhone + '\'' +
                 ", userEmail='" + userEmail + '\'' +
-                ", customers=" + customers +
-                ", roles=" + roles +
                 '}';
     }
 }

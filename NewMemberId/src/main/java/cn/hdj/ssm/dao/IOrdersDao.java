@@ -6,7 +6,6 @@ import cn.hdj.ssm.domain.Product;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-
 public interface IOrdersDao {
     @Select("select * from orders")
     @Results({

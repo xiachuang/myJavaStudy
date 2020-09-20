@@ -14,8 +14,8 @@ public interface CustomerService {
     public Boolean insertCustomer(Customer customer);
     public Customer findCustomerByName(String custName);
     public void delectCustomerById(Integer id);
-    public void delectBookByCustomerId(Integer bookId,Integer custId);
-    public void delectComicByCustomerId(Integer comicId,Integer custId);
-    public  void insetBookByCutsomerId(Integer BookId,Integer custid);
-    public  void insertComicByCustomerId(Integer comicId,Integer custid);
+    public Boolean delectBookByCustomerId(Integer bookId,Integer custId);
+    public Boolean delectComicByCustomerId(Integer comicId,Integer custId);
+    public  Boolean insetBookByCutsomerId(Integer BookId,Integer custid);
+    public  Boolean insertComicByCustomerId(Integer comicId,Integer custid);
 }

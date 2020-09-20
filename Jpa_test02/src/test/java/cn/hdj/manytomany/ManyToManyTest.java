@@ -98,14 +98,15 @@ public class ManyToManyTest {
         Specification<User> spec=new Specification<User>() {
             @Override
             public Predicate toPredicate(Root<User> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
-            Path<Object> userId= root.get(" userId");
-            Predicate p=criteriaBuilder.equal(userId,6);
+            Path<Object> userId= root.get("userId");
+            Predicate p=criteriaBuilder.equal(userId,5);
             return p;
             }
         };
-        User u=ud.findOne(spec);
+       User u=ud.findOne(spec);
         ud.delete(u);
         System.out.println("success");
+
     }
     //---------------------------------------------------------------------------------
     //测试多对多查询

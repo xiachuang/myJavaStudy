@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.*;
+import java.io.PipedInputStream;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -73,6 +74,7 @@ public class SpecTest {
                 return p3;
             }
         };
+        testspec();
         Customer c=cd.findOne(spec);
         System.out.println(c.getCustAddress());
     }

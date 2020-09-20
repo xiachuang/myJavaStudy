@@ -19,7 +19,7 @@ public class Role implements Serializable {
     private String roleName;
     @Column(name = "role_level")
     private String roleLevel;
-    @ManyToMany(mappedBy = "roles",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "roles",cascade = CascadeType.PERSIST)
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<User> users=new HashSet<>();
     public Integer getRoleId() {

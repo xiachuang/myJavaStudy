@@ -33,12 +33,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer findCustById(Integer id) {
+    public Customer findCustById(Integer uid) {
         Specification<Customer> spec=new Specification<Customer>() {
             @Override
             public Predicate toPredicate(Root<Customer> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
              Path<Object> id= root.get("id");
-             Predicate predicate=criteriaBuilder.equal(id,id);
+             Predicate predicate=criteriaBuilder.equal(id,uid);
             return  predicate;
             }
         };
@@ -51,6 +51,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
+    @Rollback(false)
     public Boolean insertCustomer(Customer customer) {
         Boolean bl=false;
        Customer customer1= customerRepository.save(customer);
@@ -74,42 +76,49 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     @Rollback(false)
-    public void delectBookByCustomerId(Integer bookId, Integer custId) {
+    public Boolean delectBookByCustomerId(Integer bookId, Integer custId) {
         Book book= bookService.findBookById(bookId);
         Customer customer=customerRepository.findById(custId).get();
         book.getCustomers().remove(customer);
         customer.getBooks().remove(book);
         customerRepository.save(customer);
+        return true;
     }
 
     @Override
     @Transactional
     @Rollback(false)
-    public void delectComicByCustomerId(Integer comicId, Integer custId) {
+    public Boolean delectComicByCustomerId(Integer comicId, Integer custId) {
             Comic comic=comicService.findComicById(comicId);
             Customer customer=customerRepository.findById(comicId).get();
             customer.getComics().remove(comic);
-            comic.getCustomer1().remove(customer);
+            comic.getCustomers1().remove(customer);
             customerRepository.save(customer);
+            return true;
     }
 
     @Override
     @Transactional
     @Rollback(false)
-    public void insetBookByCutsomerId(Integer bookId, Integer custid) {
+    public Boolean insetBookByCutsomerId(Integer bookId, Integer custid) {
         Book book=bookService.findBookById(bookId);
         Customer customer=customerRepository.findById(custid).get();
         customer.getBooks().add(book);
         book.getCustomers().add(customer);
         customerRepository.save(customer);
+        return true;
     }
 
     @Override
-    public void insertComicByCustomerId(Integer comicId, Integer custid) {
+    public Boolean insertComicByCustomerId(Integer comicId, Integer custid) {
         Comic comic=comicService.findComicById(comicId);
         Customer customer=customerRepository.findById(custid).get();
         customer.getComics().add(comic);
-        comic.getCustomer1().add(customer);
+
+        comic.getCustomers1().add(customer);
+
+
         customerRepository.save(customer);
+        return true;
     }
 }

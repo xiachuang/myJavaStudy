@@ -23,6 +23,7 @@ public class ComicServiceImpl  implements ComicService {
     public List<Comic> findByAll() {
         List<Comic> comics=comIcRepository.findAll();
         return comics;
+//        comIcRepository.saveAll();
     }
 
     @Override

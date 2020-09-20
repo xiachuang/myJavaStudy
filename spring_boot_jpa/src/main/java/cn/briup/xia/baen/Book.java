@@ -1,5 +1,6 @@
 package cn.briup.xia.baen;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -22,7 +23,7 @@ public class Book {
             inverseJoinColumns = {@JoinColumn(name="sys_type_id",referencedColumnName = "type_id")})
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<Type> types=new HashSet<>();
-    @ManyToMany(mappedBy = "books",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "books",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<Customer> customers=new HashSet<>();
 
@@ -32,7 +33,6 @@ public class Book {
                 "id=" + id +
                 ", bookName='" + bookName + '\'' +
                 ", bookWriter='" + bookWriter + '\'' +
-                ", types=" + types +
                 '}';
     }
 
@@ -67,11 +67,11 @@ public class Book {
     public void setTypes(Set<Type> types) {
         this.types = types;
     }
-
+    @JsonBackReference
     public Set<Customer> getCustomers() {
         return customers;
     }
-
+    @JsonBackReference
     public void setCustomers(Set<Customer> customers) {
         this.customers = customers;
     }

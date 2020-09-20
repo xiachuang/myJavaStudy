@@ -18,10 +18,18 @@ public class Type implements Serializable {
     private Integer id;
     @Column(name = "type_name")
     private String typeName;
-    @ManyToMany(mappedBy = "types1",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "types1",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<Comic> comics=new HashSet<>();
-    @ManyToMany(mappedBy = "types",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "types",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @NotFound(action= NotFoundAction.IGNORE)
     private Set<Book> books=new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "Type{" +
+                "id=" + id +
+                ", typeName='" + typeName + '\'' +
+                '}';
+    }
 }

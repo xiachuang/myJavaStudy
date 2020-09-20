@@ -18,8 +18,8 @@ public class Role implements Serializable {
     private String roleName;
     @Column(name = "role_level")
     private Integer level;
-    @ManyToMany(mappedBy = "roles",cascade = CascadeType.ALL)
-    @NotFound(action= NotFoundAction.IGNORE)
+    @ManyToMany(mappedBy = "roles",cascade = CascadeType.PERSIST)
+//    @NotFound(action= NotFoundAction.IGNORE)
     private Set<User> users=new HashSet<>();
 
     @Override
@@ -28,7 +28,6 @@ public class Role implements Serializable {
                 "id=" + id +
                 ", roleName='" + roleName + '\'' +
                 ", level=" + level +
-                ", users=" + users +
                 '}';
     }
 

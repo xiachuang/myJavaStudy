@@ -15,7 +15,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         request.getRequestDispatcher("/login").forward(request,response);
         return false;
         }else {
-            return false;
+            return true;
         }
     }
 

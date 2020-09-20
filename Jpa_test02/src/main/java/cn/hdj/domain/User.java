@@ -18,7 +18,7 @@ public class User implements Serializable {
     private  Integer userId;
     @Column(name = "user_name")
     private String userName;
-   @ManyToMany(targetEntity = Role.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+   @ManyToMany(targetEntity = Role.class,cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
    @JoinTable(name = "sys_user_role",joinColumns = {@JoinColumn(name = "sys_user_id",referencedColumnName = "user_id")},
    inverseJoinColumns = {@JoinColumn(name="sys_role_id",referencedColumnName = "role_id")})
    @NotFound(action= NotFoundAction.IGNORE)

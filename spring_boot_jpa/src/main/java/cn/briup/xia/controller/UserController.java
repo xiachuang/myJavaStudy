@@ -1,10 +1,12 @@
 package cn.briup.xia.controller;
 
+import cn.briup.xia.baen.Customer;
 import cn.briup.xia.baen.User;
 import cn.briup.xia.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +22,7 @@ public class UserController {
     @PostMapping("/user/login")
     public ModelAndView login(@RequestParam("userName")String userName, @RequestParam("userPassword")String userPassword, HttpSession session){
          String password  = us.checkUserName(userName);
+        System.out.println(password);
          ModelAndView mv=new ModelAndView();
          if(password==null){
              mv.addObject("msg","用户不存在！");
@@ -57,5 +60,21 @@ public class UserController {
             us.insertUser(user);
             return "redirect:/index.html";
         }
+    //创建账户
+    @PostMapping("/insert/cust")
+    public ModelAndView insertUserCust(Customer customer,@RequestParam("userId")Integer userId){
+        ModelAndView mv=new ModelAndView();
+        Boolean bl=us.insertCustomer(customer,userId);
+        if(bl){
+            mv.addObject("success","创建成功");
+            mv.setViewName("redirect:/main.html");
+            return mv;
+        }else{
+            mv.addObject("false","账号名存在");
+            mv.setViewName("/customer");
+            return mv;
+        }
+    }
+
 
     }

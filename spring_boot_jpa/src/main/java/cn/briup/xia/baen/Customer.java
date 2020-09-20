@@ -1,5 +1,6 @@
 package cn.briup.xia.baen;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -20,17 +21,17 @@ public class Customer  implements Serializable {
     private  String custName;
     @Column(name = "cust_way")
     private String  custWay;
-    @ManyToMany(targetEntity = Comic.class,fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = Comic.class,cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @JoinTable(name = "sys_cust_comic",joinColumns = {@JoinColumn(name = "sys_cust_id",referencedColumnName = "cust_id")},
             inverseJoinColumns = {@JoinColumn(name="sys_comic_id",referencedColumnName = "comic_id")})
-    @NotFound(action= NotFoundAction.IGNORE)
+   @NotFound(action= NotFoundAction.IGNORE)
     private Set<Comic> comics=new HashSet<>();
-    @ManyToMany(targetEntity = Book.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = Book.class,cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @JoinTable(name = "sys_cust_book",joinColumns = {@JoinColumn(name = "sys_cust_id",referencedColumnName = "cust_id")},
             inverseJoinColumns = {@JoinColumn(name="sys_book_id",referencedColumnName = "book_id")})
-    @NotFound(action= NotFoundAction.IGNORE)
+   @NotFound(action= NotFoundAction.IGNORE)
     private Set<Book> books=new HashSet<>();
-    @ManyToOne(targetEntity = User.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = User.class,fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "cust_user_id",referencedColumnName = "user_id")
     @NotFound(action= NotFoundAction.IGNORE)
     private  User user;
@@ -41,16 +42,7 @@ public class Customer  implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", custName='" + custName + '\'' +
-                ", custWay='" + custWay + '\'' +
-                ", comics=" + comics +
-                ", books=" + books +
-                '}';
-    }
+
 
     public String getCustName() {
         return custName;
@@ -67,11 +59,11 @@ public class Customer  implements Serializable {
     public void setCustWay(String custWay) {
         this.custWay = custWay;
     }
-
+    @JsonBackReference
     public User getUser() {
         return user;
     }
-
+    @JsonBackReference
     public void setUser(User user) {
         this.user = user;
     }
@@ -92,5 +84,12 @@ public class Customer  implements Serializable {
         this.books = books;
     }
 
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", custName='" + custName + '\'' +
+                ", custWay='" + custWay + '\'' +
+                '}';
+    }
 }

@@ -3,7 +3,9 @@ package cn.briup.xia.service.impl;
 import cn.briup.xia.baen.Customer;
 import cn.briup.xia.baen.User;
 import cn.briup.xia.repository.UserRepository;
+import cn.briup.xia.service.CustomerService;
 import cn.briup.xia.service.UserService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -19,11 +21,20 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository ur;
+    @Autowired
+    private CustomerService customerService;
 //    @Rollback(false)
     @Override
     public String checkUserName(String name) {
+        String psw="";
         User user=ur.checkUserByName(name);
-        String psw=user.getUserPassword();
+        if(user.getUserPassword()==null){
+            psw=null;
+        }else{
+            psw=user.getUserPassword();
+            System.out.println(psw);
+        }
+
         return psw;
     }
 
@@ -55,10 +66,20 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Rollback(false)
     public Boolean insertCustomer(Customer customer, Integer userId) {
-        User user=ur.getOne(userId);//getone
-        user.getCustomers().add(customer);
-        ur.save(user);
-        Boolean bl=true;
-        return null;
+        Boolean bl=false;
+        /*
+         查询
+            JPA 查空不报错  返回控制
+         */
+        Customer customer1=customerService.findCustomerByName(customer.getCustName());
+        if(customer1==null) {
+            User user = ur.getOne(userId);
+            user.getCustomers().add(customer);
+            ur.save(user);
+             bl = true;
+            return bl;
+        }else{
+            return bl;
+        }
     }
 }
