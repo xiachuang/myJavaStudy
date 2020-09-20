@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ex_server/ex_server.iml" filepath="$PROJECT_DIR$/ex_server/ex_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_boot_jpas/spring_boot_jpas.iml" filepath="$PROJECT_DIR$/spring_boot_jpas/spring_boot_jpas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_boot_rabbitmq.iml" filepath="$PROJECT_DIR$/spring_boot_rabbitmq.iml" />
+    </modules>
+  </component>
+</project>

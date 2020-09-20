@@ -1,0 +1,8 @@
+2020-08-01 16:55:50.056  INFO 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : Starting SpringBootDay03ApplicationTests on LAPTOP-P9022587 with PID 20832 (started by 19792 in C:\Users\19792\IdeaProjects\spring_boot_day03)
+2020-08-01 16:55:50.058  INFO 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : No active profile set, falling back to default profiles: default
+2020-08-01 16:55:51.868  INFO 20832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:55:53.160  INFO 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : Started SpringBootDay03ApplicationTests in 3.758 seconds (JVM running for 6.102)
+2020-08-01 16:55:54.020  INFO 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : 这是info信息
+2020-08-01 16:55:54.021  WARN 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : 这是警告日志
+2020-08-01 16:55:54.022 ERROR 20832 --- [main] c.b.s.SpringBootDay03ApplicationTests    : 这是错误日志
+2020-08-01 16:55:54.055  INFO 20832 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

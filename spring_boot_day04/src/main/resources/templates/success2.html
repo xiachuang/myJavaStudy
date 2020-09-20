@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>success</h1>
+
+<div th:text="${map['hello']}"></div>
+<div th:text="${map['age']}"></div>
+<div th:text="${map.grade}"></div>
+<!--<div th:id="${maps.name}" th:text="${maps.name}"></div>-->
+<!--<h4 th:text="${users}" th:each="users:${maps['user']}" ></h4>-->
+<!--<h4>-->
+<!--    <span th:each="users:${maps.user}">-&#45;&#45;[[${users}]]-&#45;&#45;</span>-->
+<!--</h4>-->
+</body>
+</html>

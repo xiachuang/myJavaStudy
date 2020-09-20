@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>success</h1>
+欢迎<div th:text="${param.userName}"></div>
+<!--<a th:href="@{/dept/all}">查询所以</a>-->
+<!--<a th:href="@{/dept/like(deptName='设')}">模糊查询</a>-->
+<a th:href="@{/update(userName='[[${param.userName}]]',userPassword=123456,userpwd=123456)}">修改密码</a>
+<a th:href="@{/register.html}">注册</a>
+<a th:href="@{/customer.html}">查询该用户所有注册的账号</a>
+</body>
+</html>

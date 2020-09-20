@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="@{/dept/all}">查询所以</a>
+    <a th:href="@{/dept/like(deptName='设')}">模糊查询</a>
+    <a th:href="@{/dept/findId(id='1')}">根据id查询</a>
+    <a th:href="@{/dept/insert}">保存</a>
+    <a th:href="@{/dept/update(deptName='跨国部',id='2')}">修改</a><br>
+    <a th:href="@{/emp/all}">查询所有</a>
+    <a th:href="@{/emp/like(lastName='华')}">模糊查询</a>
+    <a th:href="@{/emp(id='2')}">根据id查询</a>
+    <a th:href="@{/emp/insert}">保存</a>
+    <a th:href="@{/emp/update(lastName='妍儿',id='1')}">修改</a>
+</body>
+</html>

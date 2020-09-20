@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: 19792
+Build-Jdk: 1.8.0_91
+Implementation-Title: spring_boot_jsp
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: cn.briup
+Main-Class: ${start-class}
+
